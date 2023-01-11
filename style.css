@@ -357,6 +357,7 @@ progress {
 @media (max-width: 750px) {
   main {
     flex-direction: column;
+    width: 100vw;
     gap: 6rem;
   }
 }
