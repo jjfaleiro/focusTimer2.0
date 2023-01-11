@@ -1,0 +1,355 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* outline: 0; */
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  /*Light Mode*/
+  --bg-body: #ffffff;
+
+  --color-timer: #323238;
+  --color-icons: #323238;
+  --color-icons-selected: #ffffff;
+
+  --bg-button: #e1e1e6;
+  --bg-button-cloud: #02799d;
+  --bg-button-fire: #9d1902;
+  --bg-button-tree: #269d02;
+  --bg-button-coffee: #9d4802;
+
+  /*Dark Mode*/
+  --bg-body-dark: #121214;
+
+  --color-timer-dark: #c4c4cc;
+  --color-volume-dark: #ffffff;
+  --color-icons-dark: #c4c4cc;
+  --color-icons-dark-selected: #ffffff; /*Igual*/
+
+  --bg-button-dark: #29292e;
+  --bg-button-cloud-dark: #0a3442;
+  --bg-button-fire-dark: #420a0a;
+  --bg-button-tree-dark: #0f420a;
+  --bg-button-coffee-dark: #42280a;
+}
+
+/*====== CORES ======= OK*/
+
+.body {
+  background: linear-gradient(
+    170deg,
+    #ffffff,
+    #ffffff,
+    #ffffff,
+    #fff2f9,
+    #ffe61b,
+    #fb2576
+  );
+  background-size: 250% 250%;
+  animation: colors 8s ease infinite;
+}
+
+.body-dark {
+  background: linear-gradient(
+    290deg,
+    #000000,
+    #030303,
+    #060606,
+    #090909,
+    #3f0071,
+    #fb2576
+  );
+  background-size: 200% 200%;
+  animation: colors 8s ease infinite;
+}
+
+/*Relógio OK*/
+.numbers {
+  color: var(--color-timer);
+}
+
+.numbers-dark {
+  color: var(--color-timer-dark);
+}
+
+/*Botões do Relógio OK*/
+
+.controls svg path {
+  fill: var(--color-icons);
+}
+
+.controls-dark svg path {
+  fill: var(--color-icons-dark);
+}
+
+/*Botões de som OK*/
+
+.music {
+  background-color: var(--bg-button);
+}
+
+.music-dark {
+  background-color: var(--bg-button-dark);
+}
+
+/*SVG dos botões de música OK???*/
+
+.music svg path {
+  fill: var(--color-icons);
+}
+.music-dark svg path {
+  fill: var(--color-icons-dark);
+}
+
+
+
+/*Elemento que engloba o botão de som*/
+/* .join {
+  border: 2px solid blue;
+} */
+
+.music {
+  /* border: 2px solid purple; */
+  width: 100%;
+  padding: 2.4rem 0 2.7rem;
+  border-radius: 2.5rem 2.5rem 0 0;
+}
+
+.music-dark {
+  /* border: 2px solid purple; */
+  width: 100%;
+  padding: 2.4rem 0 2.7rem;
+  border-radius: 2.5rem 2.5rem 0 0;
+}
+
+/* #tree svg {
+  border: 1px solid red;
+} */
+
+.volume input {
+  background-color: var(--color-icons);
+}
+
+.volume input::-webkit-slider-thumb {
+  background-color: var(--color-icons);
+}
+.volume-dark input {
+  background-color: var(--color-icons-dark);
+}
+
+.volume-dark input::-webkit-slider-thumb {
+  background-color: var(--color-icons-dark);
+}
+
+.volume {
+  /* border: 2px solid green; */
+  /* width: 100%; */
+  /* display: flex;
+  justify-content: center; */
+  /* background-color: #E1E1E6; */
+  /* height: 100%; */
+  padding: 0.5rem 2.4rem 2.4rem;
+  background-color: var(--bg-button);
+  border-radius: 0 0 2.5rem 2.5rem;
+}
+
+.volume-dark {
+  /* border: 2px solid green; */
+  /* width: 100%; */
+  /* display: flex;
+  justify-content: center; */
+  /* background-color: #E1E1E6; */
+  /* height: 100%; */
+  padding: 0.5rem 2.4rem 2.4rem;
+  background-color: var(--bg-button-dark);
+  border-radius: 0 0 2.5rem 2.5rem;
+}
+
+/*SVG dos botões de música (Selecionados)*/
+/*ICONES*/
+.white svg path {
+  fill: var(--color-icons-selected);
+}
+.white input,
+.white input::-webkit-slider-thumb {
+  background-color: var(--color-icons-selected);
+}
+/*As cores dos icones selecionados são iguais*/
+/* .white-dark svg path {
+  fill: var(--color-icons-dark-selected);
+} */
+
+/*FUNDO LIGHT*/
+.green {
+  background-color: var(--bg-button-tree);
+}
+
+.blue {
+  background-color: var(--bg-button-cloud);
+}
+.brown {
+  background-color: var(--bg-button-coffee);
+}
+.red {
+  background-color: var(--bg-button-fire);
+}
+
+/*FUNDO DARK*/
+.green-dark {
+  background-color: var(--bg-button-tree-dark);
+}
+.blue-dark {
+  background-color: var(--bg-button-cloud-dark);
+}
+.brown-dark {
+  background-color: var(--bg-button-coffee-dark);
+}
+.red-dark {
+  background-color: var(--bg-button-fire-dark);
+}
+
+/*ICONES DA LUA E DO SOL*/
+
+/*====== DIMENSÕES =======*/
+
+body {
+  position: relative;
+}
+
+.wrapper-main {
+  height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+main {
+  width: clamp(65rem, 15rem + 60vw, 82rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+/* === Cronômetro === */
+
+#clock {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+#timer {
+  display: flex; /*Juntar os span*/
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 12.6rem;
+  line-height: 14.8rem;
+}
+
+#stopwatch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#pause svg path {
+  width: 4.8rem;
+  height: 4.8rem;
+}
+
+.hide {
+  display: none;
+}
+
+/* ===Dark e Light Mode IMG === */
+
+.sun {
+  position: absolute;
+  top: 3.5rem;
+  right: 3.5rem;
+}
+
+.moon {
+  position: absolute;
+  top: 3.5rem;
+  right: 3.5rem;
+}
+
+/* === Sons === */
+
+#sounds {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.2rem;
+}
+
+/* === Botões dos sons === */
+
+#tree {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  align-items: center;
+  position: relative;
+}
+
+#cloud {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  align-items: center;
+}
+
+#coffeeShop {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  align-items: center;
+}
+
+#fire {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  align-items: center;
+}
+
+/*Barra*/
+input {
+  width: 9.5rem;
+  height: 0.4rem;
+  -webkit-appearance: none;
+  border-radius: 1rem;
+}
+
+/*Bolinha*/
+input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+progress {
+  display: none;
+}
+
+@keyframes colors {
+  0% {
+    background-position: 0% 100%;
+  }
+  50% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
