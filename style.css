@@ -353,3 +353,10 @@ progress {
     background-position: 0% 100%;
   }
 }
+
+@media (max-width: 750px) {
+  main {
+    flex-direction: column;
+    gap: 6rem;
+  }
+}
